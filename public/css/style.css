@@ -272,18 +272,42 @@ button {
      border-bottom: #fff solid 3px;
 }
 
+.navigation.navbar-dark .navbar-nav .nav-log {
+     padding: 7px 0px 27px 0px;
+     margin: 0 22px;
+     color: #010101;
+     font-size: 16px;
+     line-height: 20px;
+     font-weight: 500;
+     text-transform: uppercase;
+     border-bottom: #fff solid 3px;
+}
+
 .navigation.navbar-dark .navbar-nav .nav-link:focus,
 .navigation.navbar-dark .navbar-nav .nav-link:hover {
-     color: #fe0000;
-     border-bottom: #fe0000 solid 3px;
+     color: #A5C7B5;
+     border-bottom: #A5C7B5 solid 3px;
+}
+
+.navigation.navbar-dark .navbar-nav .nav-log:focus,
+.navigation.navbar-dark .navbar-nav .nav-log:hover {
+     color: blue;
+     border-bottom: blue solid 3px;
 }
 
 .navigation.navbar-dark .navbar-nav .active>.nav-link,
 .navigation.navbar-dark .navbar-nav .nav-link.active,
 .navigation.navbar-dark .navbar-nav .nav-link.show,
 .navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #fe0000;
-     border-bottom: #fe0000 solid 3px;
+     color: #A5C7B5;
+     border-bottom: #A5C7B5 solid 3px;
+}
+.navigation.navbar-dark .navbar-nav .active>.nav-log,
+.navigation.navbar-dark .navbar-nav .nav-log.active,
+.navigation.navbar-dark .navbar-nav .nav-log.show,
+.navigation.navbar-dark .navbar-nav .show>.nav-log {
+     color: #A5C7B5;
+     border-bottom: #A5C7B5 solid 3px;
 }
 
 .navbar-expand-md .navbar-nav {
@@ -292,7 +316,7 @@ button {
 
 .header {
      width: 100%;
-     height: 86px;
+     height: 110px;
      padding: 15px 0px 15px 0px;
      background: #fff;
 }
@@ -312,7 +336,7 @@ button {
 }
 
 .banner .carousel-indicators .active {
-     background-color: #fe0000;
+     background-color: #A5C7B5;
 }
 
 .booking_ocline {
@@ -325,7 +349,7 @@ button {
 .book_room {
      background-color: #000000c7;
      padding: 30px 35px;
-     border-left: #ff0909 solid 5px;
+     border-left: #A5C7B5 solid 5px;
 }
 
 .book_room h1 {
@@ -367,7 +391,7 @@ button {
 }
 
 .book_btn {
-     background-color: #fe0000;
+     background-color: #A5C7B5;
      max-width: 189px;
      width: 100%;
      margin: 0 auto;
@@ -381,7 +405,7 @@ button {
 
 .book_btn:hover {
      background-color: #fff;
-     color: #fe0000;
+     color: #A5C7B5;
      transition: ease-in 0.5s;
 }
 
@@ -416,7 +440,7 @@ button {
 .titlepage h2::before {
      position: absolute;
      content: "";
-     background-color: #ff0909;
+     background-color: #A5C7B5;
      width: 20px;
      height: 4px;
      transform: rotate(-36deg);
@@ -425,7 +449,7 @@ button {
 .titlepage h2::after {
      position: absolute;
      content: "";
-     background-color: #ff0909;
+     background-color: #A5C7B5;
      width: 20px;
      height: 4px;
      transform: rotate(-36deg);
@@ -453,7 +477,7 @@ button {
 }
 
 .read_more:hover {
-     background: #fe0000;
+     background: #A5C7B5;
      color: #fff;
      transition: ease-in all 0.5s;
 }
@@ -560,7 +584,7 @@ button {
 
 #serv_hover:hover.room {
      cursor: pointer;
-     box-shadow: 0px 0px 30px rgba(255, 9, 9, 0.15);
+     box-shadow: 0px 0px 30px rgb(165,199,181);
      transition: ease-in all 0.5s;
 }
 
@@ -665,7 +689,7 @@ button {
 
 .blog .blog_box .blog_room span {
      font-size: 15px;
-     color: #ff0909;
+     color: #A5C7B5;
      font-weight: bold;
      margin-bottom: 10px;
      display: block;
@@ -697,7 +721,7 @@ button {
      color: #000000;
      font-size: 18px;
      font-weight: normal;
-     box-shadow: 2px 0px 6px rgba(255, 9, 9, 0.20);
+     box-shadow: 2px 0px 6px rgb(165,199,181);
 }
 
 .main_form .textarea {
@@ -709,7 +733,7 @@ button {
      font-size: 18px;
      font-weight: normal;
      padding: 12px 15px 0 15px;
-     box-shadow: 2px 0px 6px rgba(255, 9, 9, 0.20);
+     box-shadow: 2px 0px 6px rgb(165,199,181);
      height: 150px;
 }
 
@@ -729,7 +753,7 @@ button {
 }
 
 .main_form .send_btn:hover {
-     background-color: #ff0909;
+     background-color: #A5C7B5;
      transition: ease-in all 0.5s;
      color: #fff;
 }
@@ -767,7 +791,7 @@ button {
      text-align: left;
      color: #fff;
      margin-bottom: 15px;
-     border-bottom: #ff0909 solid 3px;
+     border-bottom: #A5C7B5 solid 3px;
      padding-bottom: 3px;
      display: table;
 }
@@ -795,7 +819,7 @@ ul.link_menu li {
 }
 
 ul.link_menu li.active a {
-     color: #ff0909;
+     color: #A5C7B5;
 }
 
 ul.link_menu li a {
@@ -807,7 +831,7 @@ ul.link_menu li a {
 }
 
 ul.link_menu li a:hover {
-     color: #ff0909;
+     color: #A5C7B5;
 }
 
 .bottom_form {
@@ -845,7 +869,7 @@ ul.link_menu li a:hover {
      font-size: 17px;
      transition: ease-in all 0.5s;
      background-color: #fff;
-     color: #ff0909;
+     color: #A5C7B5;
      padding: 8px 0px;
      max-width: 147px;
      width: 100%;
@@ -855,7 +879,7 @@ ul.link_menu li a:hover {
 }
 
 .sub_btn:hover {
-     background-color: #ff0909;
+     background-color: #A5C7B5;
      transition: ease-in all 0.5s;
      color: #fff;
 }
@@ -882,14 +906,14 @@ ul.social_icon li a {
 }
 
 ul.social_icon li a:hover {
-     color: #ff0909;
+     color: #A5C7B5;
 }
 
 .copyright {
      margin-top: 60px;
      padding-bottom: 20px;
      background-color: #fff;
-     border: #ff0909 solid 3px;
+     border: #A5C7B5 solid 3px;
      border-right: inherit;
      border-left: inherit;
 }
@@ -909,7 +933,7 @@ ul.social_icon li a:hover {
 }
 
 .copyright a:hover {
-     color: #ff0909;
+     color: #A5C7B5;
 }
 
 
