@@ -37,12 +37,45 @@
                                  <a class="nav-link" href="contact.html">Contact Us</a>
                               </li>
                               
-                              <li class="nav-item">
-                                 <a class="nav-log" href="{{url('login')}}">Login</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-log" href="{{url('register')}}">Register</a>
-                              </li>
+                              @if (Route::has('login'))
+                                  @auth
+                                    <!-- User Authenticated -->
+                                    <li class="nav-item dropdown">
+                                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                           @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                                               <img class="rounded-circle" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" style="width: 30px; height: 30px;">
+                                           @else
+                                               {{ Auth::user()->name }}
+                                           @endif
+                                       </a>
+                                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                          <div class="block px-4 py-2 text-xs text-gray-400" style="font-size: x-small;">
+                                             {{ __('Manage Account') }}
+                                         </div>
+                                           <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
+                                           {{-- <a class="dropdown-item" href="{{ route('home') }}">Dashboard</a> --}}
+                                           @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                                               <a class="dropdown-item" href="{{ route('api-tokens.index') }}">API Tokens</a>
+                                           @endif
+                                           <div class="dropdown-divider"></div>
+                                           <form method="POST" action="{{ route('logout') }}">
+                                               @csrf
+                                               <button type="submit" class="dropdown-item">Logout</button>
+                                           </form>
+                                       </div>
+                                   </li>
+                                  @else
+                                  <li class="nav-item mr-1">
+                                    <a class="nav-link" href="{{url('login')}}">Login</a>
+                                 </li>
+                                      @if (Route::has('register'))
+                                      <li class="nav-item mr-1">
+                                          <a class="nav-link" href="{{url('register')}}">Register</a>
+                                       </li>
+                                      @endif
+                                  @endauth
+                          @endif
+
                            </ul>
                         </div>
                      </nav>
