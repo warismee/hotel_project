@@ -135,7 +135,46 @@
             <div aria-labelledby="languages" class="dropdown-menu"><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/DE.png" alt="English" class="mr-2"><span>German</span></a><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/FR.png" alt="English" class="mr-2"><span>French  </span></a></div>
           </div>
           <!-- Log out               -->
-          <div class="list-inline-item logout">                   <a id="logout" href="login.html" class="nav-link">Logout <i class="icon-logout"></i></a></div>
+          <div class="list-inline-item logout">
+            @if (Route::has('login'))
+            @auth
+              <!-- User Authenticated -->
+              <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                         <img class="rounded-circle" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" style="width: 30px; height: 30px;">
+                     @else
+                         {{ Auth::user()->name }}
+                     @endif
+                 </a>
+                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="block px-4 py-2 text-xs text-gray-400" style="font-size: x-small;">
+                       {{ __('Manage Account') }}
+                   </div>
+                     <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
+                     {{-- <a class="dropdown-item" href="{{ route('home') }}">Dashboard</a> --}}
+                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                         <a class="dropdown-item" href="{{ route('api-tokens.index') }}">API Tokens</a>
+                     @endif
+                     <div class="dropdown-divider"></div>
+                     <form method="POST" action="{{ route('logout') }}">
+                         @csrf
+                         <button type="submit" class="dropdown-item text-white">Logout</button>
+                     </form>
+                 </div>
+             </li>
+            @else
+            <li class="nav-item mr-1">
+              <a class="nav-link" href="{{url('login')}}">Login</a>
+           </li>
+                @if (Route::has('register'))
+                <li class="nav-item mr-1">
+                    <a class="nav-link" href="{{url('register')}}">Register</a>
+                 </li>
+                @endif
+            @endauth
+    @endif
+          </div>
         </div>
       </div>
     </nav>
