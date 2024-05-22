@@ -32,4 +32,9 @@ class AdminController extends Controller
     {
         return view('home.index');
     }
+
+    public function create_room()
+    {
+        return view('admin.create_room');
+    }
 }
