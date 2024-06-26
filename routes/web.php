@@ -26,3 +26,4 @@ Route::get('/create_room',[AdminController::class,'create_room']);
 Route::post('/add_room',[AdminController::class,'add_room']);
 
 Route::get('/view_room',[AdminController::class,'view_room']);
+Route::get('/deleteroom/{id}',[AdminController::class,'deleteroom']);
