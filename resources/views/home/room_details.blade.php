@@ -3,6 +3,19 @@
    <head>
     <base href="/public">
     @include('home.css')
+
+    <style type="text/css">
+      label
+      {
+         display:inline-block;
+         width:200px;
+      }
+
+      input
+      {
+         width:100%;
+      }
+    </style>
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -42,10 +55,62 @@
                </div>
             </div>
          </div>
+         <div class="col-md-4 col-sm-6">
+            <h1 style="font-size:40;">Book Room</h1>
+            @if($errors)
+            @foreach ($errors->all() as $error)
+                <li style="color:red">{{$error}}</li>
+            @endforeach
+            @endif
+
+            <form action="{{url('add_booking',$room->id)}}" method="post">
+               @csrf
+            <div>
+               <label>Name</label>
+               <input type="text" name="name" value="{{Auth::user()->name ?? ''}}">
+            </div>
+            <div>
+               <label>Email</label>
+               <input type="email" name="email" value="{{Auth::user()->email ?? ''}}" >
+            </div>
+            <div>
+               <label>Phone</label>
+               <input type="number" name="phone" value="{{Auth::user()->phone ?? ''}}">
+            </div>
+            <div>
+               <label>Start Date</label>
+               <input type="date" name="startDate" id="startDate">
+            </div>
+            <div>
+               <label>End Date</label>
+               <input type="date" name="endDate" id="endDate">
+            </div>
+            <div style="padding-top:20px;">
+               <input type="submit" class="book_btn" style="border: none" value="Book Room">
+            </div>
+         </form>
+         </div>
+
       </div>
     </div>
 </div>
       <!--  footer -->
       @include('home.footer')
+
+      <script type="text/javascript">
+         var dateToday = new Date();
+         var month = dateToday.getMonth() + 1;
+         var day = dateToday.getDate();
+         var year = dateToday.getFullYear();
+         if (month < 10) {
+            month = "0" + month.toString();
+         }
+         if (day < 10) {
+            day = "0" + day.toString();
+         }
+         var maxDate = year + "-" + month + "-" + day;
+         $('#startDate').attr('min', maxDate);
+         $('#endDate').attr('min', maxDate);
+      </script>
    </body>
 </html>

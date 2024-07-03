@@ -33,3 +33,4 @@ Route::get('/update_room/{id}',[AdminController::class,'update_room']);
 Route::post('/edit_room/{id}',[AdminController::class,'edit_room']);
 
 Route::get('/room_details/{id}',[HomeController::class,'room_details']);
+Route::post('/add_booking/{id}',[HomeController::class,'add_booking'])->name('add_booking');;
