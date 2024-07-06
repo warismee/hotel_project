@@ -27,6 +27,6 @@ class HomeController extends Controller
         $booking->start_date = $request->startDate;
         $booking->end_date = $request->endDate;
         $booking->save();
-        return redirect()->back();
+        return redirect()->back()->with('message','Booking Added Successfully');
     }
 }
