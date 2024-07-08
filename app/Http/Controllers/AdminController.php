@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
+use App\Models\User;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-use App\Models\Room;
+
 class AdminController extends Controller
 {
     public function index()
@@ -95,5 +97,11 @@ class AdminController extends Controller
         
         $room->save();
         return redirect()->back();
+    }
+
+    public function bookings()
+    {
+        $data = Booking::all();
+        return view('admin.booking', compact('data'));
     }
 }

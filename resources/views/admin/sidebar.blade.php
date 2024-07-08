@@ -19,6 +19,7 @@
                   <li><a href="#">Page</a></li>
                 </ul>
               </li>
+              <li class="active"><a href="{{url('bookings')}}"> <i class="icon-home"></i>Bookings </a></li>
       </ul>
     </nav>
     <!-- Sidebar Navigation end-->
