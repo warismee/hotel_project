@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Models\User;
 use App\Models\Booking;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -124,6 +125,34 @@ class AdminController extends Controller
         $booking = Booking::find($id);
         $booking->status = 'Rejected';
         $booking->save();
+        return redirect()->back();
+    }
+
+    public function view_gallery()
+    {
+        $gallery = Gallery::all();
+        return view('admin.view_gallery',compact('gallery'));
+    }
+
+    public function upload_gallery(Request $request)
+    {
+        $data = new Gallery;
+        $image = $request->image;
+        if($image)
+        {
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+            $request->image->move(public_path('galleryimage'),$imagename);
+            $data->image = $imagename;
+        }
+        
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function delete_gallery($id)
+    {
+        $gallery = Gallery::find($id);
+        $gallery->delete();
         return redirect()->back();
     }
 }
