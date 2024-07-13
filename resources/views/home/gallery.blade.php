@@ -11,7 +11,7 @@
          @foreach($gallery as $gal)
           <div class="col-md-3 col-sm-6">
              <div class="gallery_img">
-                <figure><img src="galleryimage/{{$gal->image}}" style=" height=200px !important" alt="#"/></figure>
+                <figure><img src="galleryimage/{{$gal->image}}"alt="#"/></figure>
              </div>
           </div>
           @endforeach
