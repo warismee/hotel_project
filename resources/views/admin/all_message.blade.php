@@ -37,6 +37,7 @@
                     <th class="th-deg">Email</th>
                     <th class="th-deg">Phone</th>
                     <th class="th-deg">Message</th>
+                    <th class="th-deg">Send Email</th>
                 </tr>
                 @foreach($all_message as $m)
                 <tr>
@@ -44,6 +45,7 @@
                     <td>{{$m->email}}</td>
                     <td>{{$m->phone}}</td>
                     <td>{{$m->message}}</td>
+                    <td><a class="btn btn-success" href="{{url('sendmail', $m->id)}}">Send mail</a></td>
                 </tr>
                 @endforeach
             </table>

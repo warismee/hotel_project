@@ -9,6 +9,8 @@ use App\Models\Contact;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\EmailNotification;
+use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
 {
@@ -163,5 +165,26 @@ class AdminController extends Controller
     {
         $all_message=Contact::all();
         return view('admin.all_message',compact('all_message'));
+    }
+
+    public function sendmail($id)
+    {
+        $contact_mail = Contact::find($id);
+        return view('admin.sendmail',compact('contact_mail'));
+    }
+
+    public function mail(Request $request,$id)
+    {
+        $contact_mail = Contact::find($id);
+        $details = [
+            'greeting' => $request->greeting,
+            'mail_content' => $request->mail_content,
+            'action_text' => $request->action_text,
+            'action_url' => $request->action_url,
+            'endline' => $request->endline
+        ];
+
+        Notification::send($contact_mail, new EmailNotification($details));
+        return redirect()->back();
     }
 }
