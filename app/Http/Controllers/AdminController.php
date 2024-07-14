@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Models\User;
 use App\Models\Booking;
+use App\Models\Contact;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -156,5 +157,11 @@ class AdminController extends Controller
         $gallery = Gallery::find($id);
         $gallery->delete();
         return redirect()->back();
+    }
+
+    public function all_message()
+    {
+        $all_message=Contact::all();
+        return view('admin.all_message',compact('all_message'));
     }
 }
