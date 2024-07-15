@@ -52,3 +52,4 @@ Route::get('/sendmail/{id}',[AdminController::class,'sendmail']);
 Route::post('/mail/{id}',[AdminController::class,'mail']);
 
 Route::get('/our_rooms',[HomeController::class,'our_rooms']);
+Route::get('/hotel_gallery',[HomeController::class,'hotel_gallery']);

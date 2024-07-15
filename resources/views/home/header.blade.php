@@ -28,7 +28,7 @@
                                  <a class="nav-link" href="{{url('our_rooms')}}">Our room</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="gallery.html">Gallery</a>
+                                 <a class="nav-link" href="{{url('hotel_gallery')}}">Gallery</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="contact.html">Contact Us</a>

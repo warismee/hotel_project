@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Models\Booking;
 use App\Models\Contact;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -60,5 +61,11 @@ class HomeController extends Controller
     {
         $rooms = Room::all();
         return view('home.our_rooms',compact('rooms'));
+    }
+
+    public function hotel_gallery()
+    {
+        $gallery = Gallery::all();
+        return view('home.hotel_gallery',compact('gallery'));
     }
 }
