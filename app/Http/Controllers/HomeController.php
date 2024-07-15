@@ -68,4 +68,9 @@ class HomeController extends Controller
         $gallery = Gallery::all();
         return view('home.hotel_gallery',compact('gallery'));
     }
+
+    public function contact_us()
+    {
+        return view('home.contact_us');
+    }
 }
