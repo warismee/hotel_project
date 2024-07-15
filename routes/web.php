@@ -35,7 +35,7 @@ Route::post('/edit_room/{id}',[AdminController::class,'edit_room']);
 Route::get('/room_details/{id}',[HomeController::class,'room_details']);
 Route::post('/add_booking/{id}',[HomeController::class,'add_booking'])->name('add_booking');
 
-Route::get('/bookings',[AdminController::class,'bookings']);
+Route::get('/bookings',[AdminController::class,'bookings'])->middleware(['auth','admin']);
 Route::get('/deletebooking/{id}',[AdminController::class,'deletebooking']);
 Route::get('/approve_booking/{id}',[AdminController::class,'approve_booking']);
 Route::get('/reject_booking/{id}',[AdminController::class,'reject_booking']);
